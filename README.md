@@ -10,6 +10,19 @@ the Flink jargon, which basically are consecutive blocks of elements split by
 their event time). Once the elements are grouped in their windows, we want
 them to go to different sinks (stored).
 
+## WARNING!
+
+This code is hard to read on purpose; the general idea was to produce a single
+file that could be read in a sitting.
+
+On general, I'd move each Function to its own class and simply add the class
+directly into the function call. For example, instead of doing `.process(new
+ProcessFunction[Metric, Metric]) { blah, blah blah }`, I'd create a class that
+extends `ProcessFunction` and use that class instead in `new ProcessFunction`.
+
+The current way is more explicit, but creating classes directly in the pipeline
+makes it a hell to read.
+
 ## The layout
 
 ### Metrics
