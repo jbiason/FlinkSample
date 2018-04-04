@@ -1,4 +1,4 @@
-package com.azion
+package net.juliobiason
 
 // Yes, you can import multiple elements from a module in Scala;
 // I just prefer to use each on a single line to a) see how huge

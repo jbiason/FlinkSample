@@ -6,7 +6,7 @@ name := "sideoutput-sample"
 
 version := "0.0.1"
 
-organization := "com.azion"
+organization := "net.juliobiason"
 
 scalaVersion in ThisBuild := "2.11.8"
 
@@ -25,7 +25,7 @@ libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-log4j12" % "1.7.25"
 )
 
-mainClass in assembly := Some("com.azion.SideouputSample")
+mainClass in assembly := Some("net.juliobiason.SideouputSample")
 
 // make run command include the provided dependencies
 run in Compile := Defaults.runTask(fullClasspath in Compile,
