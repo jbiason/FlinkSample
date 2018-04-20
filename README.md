@@ -23,6 +23,8 @@ extends `ProcessFunction` and use that class instead in `new ProcessFunction`.
 The current way is more explicit, but creating classes directly in the pipeline
 makes it a hell to read.
 
+(This is something I'll fix in the future, though.)
+
 ## The layout
 
 ### Metrics
@@ -104,10 +106,3 @@ download all necessary dependencies and run the pipeline in standalone mode.
 
 We didn't test it using the full Jobmanager+TaskManager model of Flink and,
 thus, this is given as an exercise to the reader. :)
-
-## The problem
-
-The problem here -- which this sample tried to demonstrate -- is that once the
-windows are generated and are processed by the `ProcessFunction` that sends
-each metric to its side output, the side outputs are never captured again --
-so even if they are sent to side outputs, they die in the limbo.
